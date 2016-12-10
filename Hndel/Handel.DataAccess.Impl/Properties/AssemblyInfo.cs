@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Handel.DataAccess.Implementation")]
+[assembly: AssemblyTitle("Handel.DataAccess.Impl")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Handel.DataAccess.Implementation")]
+[assembly: AssemblyProduct("Handel.DataAccess.Impl")]
 [assembly: AssemblyCopyright("Copyright ©  2016")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("2d2d1b6c-0922-4641-a175-d57182983f9e")]
+[assembly: Guid("f4c78463-8f4f-469b-b182-30246c040ce7")]
 
 // Version information for an assembly consists of the following four values:
 //

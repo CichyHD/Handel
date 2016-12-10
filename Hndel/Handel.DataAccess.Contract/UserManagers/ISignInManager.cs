@@ -8,9 +8,9 @@ using Handel.DataAccess.Contract.Enums;
 
 namespace Handel.DataAccess.Contract.UserManagers
 {
-    public interface ISignInManager<T> where T : IApplicationUser
+    public interface ISignInManager
     {
-        Task<SignInStatus> PasswordSignInAsync(string userName, string password, bool isPersistent);
-        Task SignInAsync(T user, bool isPersistent, bool rememberBrowser);
+        Task<MySignInStatus> PasswordSignInAsync(string userName, string password, bool isPersistent);
+        Task SignInAsync(IApplicationUser user, bool isPersistent, bool rememberBrowser);
     }
 }

@@ -45,6 +45,8 @@
     <Compile Include="Contracts\IApplicationUser.cs" />
     <Compile Include="Contracts\IBaseObject.cs" />
     <Compile Include="BusinessClasses\Shop.cs" />
+    <Compile Include="Contracts\IEmailService.cs" />
+    <Compile Include="Misc\ApplicationVariables.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

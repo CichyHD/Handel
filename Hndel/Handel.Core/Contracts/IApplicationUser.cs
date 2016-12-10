@@ -20,5 +20,6 @@ namespace Handel.Core.Contracts
         /// </summary>
         string DisplayName { get; set; }
         T ConvertTo<T>() where T : class, IApplicationUser;
+        bool EmailConfirmed { get; set; }
     }
 }

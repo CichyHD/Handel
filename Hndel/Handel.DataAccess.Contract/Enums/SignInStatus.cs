@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Handel.DataAccess.Contract.Enums
 {
-    public enum SignInStatus
+    public enum MySignInStatus
     {
         Success = 0,
         LockedOut = 1,

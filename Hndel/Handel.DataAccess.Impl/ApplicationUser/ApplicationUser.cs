@@ -1,10 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
 using Handel.Core.BusinessClasses;
 using Handel.Core.Contracts;
+using Handel.DataAccess.Impl.UserManagers;
+using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace Handel.DataAccess.Implementation
@@ -21,6 +24,12 @@ namespace Handel.DataAccess.Implementation
             }
 
             return result;
+        }
+
+        public async Task<ClaimsIdentity> GenerateUserIdentityAsync(ApplicationUserManager manager)
+        {
+            var userIdentity = await (manager).CreateIdentityAsync(this, DefaultAuthenticationTypes.ApplicationCookie);
+            return userIdentity;
         }
     }
 

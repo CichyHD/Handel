@@ -42,6 +42,8 @@
   <ItemGroup>
     <Compile Include="AbstractFactories\IApplicationUserFactory.cs" />
     <Compile Include="Enums\SignInStatus.cs" />
+    <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Services\IAccountService.cs" />
     <Compile Include="IRepository\IRepository.cs" />
     <Compile Include="Misc\IIdentityResult.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

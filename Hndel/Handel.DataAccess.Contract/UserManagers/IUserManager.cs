@@ -11,24 +11,32 @@ using Handel.DataAccess.Contract.Misc;
 
 namespace Handel.DataAccess.Contract.UserManagers
 {
-    public interface IUserManager<T> where T : IBaseObject, IApplicationUser
+    public interface IUserManager
     {
-        Task<IIdentityResult> CreateAsync(T user, string password);
-        Task<IIdentityResult> ConfirmEmailAsync(T user, string token);
-        Task<T> FindByNameAsync(T user);
-        Task<bool> IsEmailConfirmedAsync(T user);
-        Task<IIdentityResult> ResetPasswordAsync(T user, string token, string newPassword);
-        Task<ClaimsIdentity> CreateIdentityAsync(T user, string authType);
-        Task<T> FindByIdAsync(Guid id);
-        T FindById(Guid key);
-        Task<IIdentityResult> DeleteAsync(T user);
-        Task<T> FindByEmial(string email);
-        Task<T> FindByPersonAsync(T person);
-        T FindByPerson(T person);
-        Task<IIdentityResult> AddRoleAsync(T user, string role);
-        IIdentityResult AddRole(T user, string recenzent);
-        IQueryable<T> FindUsers(Expression<Func<T, bool>> query);
-        IQueryable<T> GetAllUsersInRole(string roleName);
-        IQueryable<T> GetAllUsers(Expression<Func<T, bool>> query);
+        Task<IIdentityResult> CreateAsync(IApplicationUser user, string password);
+        Task<IIdentityResult> ConfirmEmailAsync(IApplicationUser user, string token);
+        Task<IApplicationUser> FindByNameAsync(IApplicationUser user);
+        Task<bool> IsEmailConfirmedAsync(IApplicationUser user);
+        Task<IIdentityResult> ResetPasswordAsync(IApplicationUser user, string token, string newPassword);
+        Task<ClaimsIdentity> CreateIdentityAsync(IApplicationUser user, string authType);
+        Task<IApplicationUser> FindByIdAsync(Guid id);
+        IApplicationUser FindById(Guid key);
+        Task<IIdentityResult> DeleteAsync(IApplicationUser user);
+        IApplicationUser FindByEmial(string email);
+        Task<IApplicationUser> FindByPersonAsync(IApplicationUser person);
+        IApplicationUser FindByPerson(IApplicationUser person);
+        Task<IIdentityResult> AddRoleAsync(IApplicationUser user, string role);
+        IIdentityResult AddRole(IApplicationUser user, string recenzent);
+        IQueryable<IApplicationUser> FindUsers(Expression<Func<IApplicationUser, bool>> query);
+        IQueryable<IApplicationUser> GetAllUsersInRole(string roleName);
+        IQueryable<IApplicationUser> GetAllUsers(Expression<Func<IApplicationUser, bool>> query);
+        IIdentityResult ChangePassword(Guid userId, string oldPassword, string confirmPassword);
+        Task<IApplicationUser> FindByEmialAsync(string email);
+        bool IsEmailConfirmed(Guid userId);
+        IIdentityResult ConfirmEmail(Guid userId, string emailConfirmationCode);
+        IIdentityResult ResetPassword(IApplicationUser user, string resetPasswordCode, string password);
+        IIdentityResult ChangePasswordWithoutToken(IApplicationUser user, string toString);
+        string GeneratePasswordResetToken(IApplicationUser user);
+        void SendEmail(IApplicationUser user, object subject, object body);
     }
 }
