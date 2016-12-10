@@ -7,7 +7,7 @@ using Handel.Core.BusinessClasses;
 
 namespace Handel.Core.Contracts
 {
-    public interface IApplicationUser : IBaseObject
+    public interface IApplicationUser : IBaseObject<Guid>
     {
         
         /// <summary>

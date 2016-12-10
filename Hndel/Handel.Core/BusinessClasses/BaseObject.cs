@@ -7,10 +7,10 @@ using System.Threading.Tasks;
 
 namespace Handel.Core.BusinessClasses
 {
-    public class BaseObject : IBaseObject
+    public class BaseObject<T> : IBaseObject<T>
     {
         //itp
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public Guid Id { get; set; }
+        public T Id { get; set; }
     }
 }

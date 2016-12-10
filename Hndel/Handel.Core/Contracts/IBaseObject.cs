@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace Handel.Core.BusinessClasses
 {
-    public interface IBaseObject
+    public interface IBaseObject<T>
     {
-        Guid Id { get; set; }
+        T Id { get; set; }
     }
 }

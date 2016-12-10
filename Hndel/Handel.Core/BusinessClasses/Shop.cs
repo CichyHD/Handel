@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Handel.Core.BusinessClasses
 {
-    public class Shop : BaseObject
+    public class Shop : BaseObject<Guid>
     {
         //TODO
         //klasa biznesowa

@@ -12,7 +12,7 @@ namespace Handel.DataAccess.Implementation.Context
 {
     public class ApplicationContext : IdentityDbContext<ApplicationUser, GuidRole, Guid, GuidUserLogin, GuidUserRole, GuidUserClaim>
     {
-        public DbSet<Shop> People { get; set; }
+        public DbSet<Shop> Shops { get; set; }
 
         public ApplicationContext(string connectionString) : base(connectionString)
         {

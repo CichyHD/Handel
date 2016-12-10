@@ -10,46 +10,11 @@ using Handel.DataAccess.Implementation.Context;
 
 namespace Handel.DataAccess.Impl.Repositories
 {
-    public class ShopRepository : RepositoryBase, IRepository<Shop>
+    public class ShopRepository : GenericRepository<Shop, Guid>
     {
         public ShopRepository(ApplicationContext context) : base(context)
         {
 
-        }
-
-        public void Add(Shop obiekt)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Shop FindObject(Expression<Func<Shop, bool>> query)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void AddRange(ICollection<Shop> collection)
-        {
-            throw new NotImplementedException();
-        }
-
-        public IQueryable<Shop> GetAll()
-        {
-            throw new NotImplementedException();
-        }
-
-        public Shop Delete(Shop entity)
-        {
-            throw new NotImplementedException();
-        }
-
-        public IQueryable<Shop> FindAll(Expression<Func<Shop, bool>> func)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Shop Delete(Guid id)
-        {
-            throw new NotImplementedException();
         }
     }
 }
