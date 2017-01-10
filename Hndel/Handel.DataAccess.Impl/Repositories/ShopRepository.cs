@@ -10,11 +10,18 @@ using Handel.DataAccess.Implementation.Context;
 
 namespace Handel.DataAccess.Impl.Repositories
 {
-    public class ShopRepository : GenericRepository<Shop, Guid>
+    public class ShopRepository : GenericRepository<Shop, Guid>,IShopRepository
     {
+        private ApplicationContext _context;
+
         public ShopRepository(ApplicationContext context) : base(context)
         {
+            _context = context;
+        }
 
+        public object someTestRepoFloatToService(string message)
+        {
+            return _context.Shops.Where(s => s.Name == "exampleName");
         }
     }
 }

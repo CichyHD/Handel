@@ -42,11 +42,13 @@
   <ItemGroup>
     <Compile Include="AbstractFactories\IApplicationUserFactory.cs" />
     <Compile Include="Enums\SignInStatus.cs" />
+    <Compile Include="IRepository\IShopRepository.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Services\IAccountService.cs" />
     <Compile Include="IRepository\IGenericRepository.cs" />
     <Compile Include="Misc\IIdentityResult.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\IFloatTestService.cs" />
     <Compile Include="UserManagers\ISignInManager.cs" />
     <Compile Include="UserManagers\IUserManager.cs" />
   </ItemGroup>

@@ -94,6 +94,7 @@
     <Compile Include="Repositories\GenericRepository.cs" />
     <Compile Include="Repositories\ShopRepository.cs" />
     <Compile Include="Services\AccountService.cs" />
+    <Compile Include="Services\FloatTestService.cs" />
     <Compile Include="Services\IdentityEmailService.cs" />
     <Compile Include="UserManagers\ApplicationSignInManager.cs" />
     <Compile Include="UserManagers\ApplicationUserManager.cs" />
