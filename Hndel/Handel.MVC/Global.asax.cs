@@ -14,7 +14,10 @@ using Handel.Core.Contracts;
 using Handel.Core.Misc;
 using Handel.DataAccess.Contract;
 using Handel.DataAccess.Contract.AbstractFactories;
+using Handel.DataAccess.Contract.IRepository;
+using Handel.DataAccess.Contract.Services;
 using Handel.DataAccess.Contract.UserManagers;
+using Handel.DataAccess.Impl.Repositories;
 using Handel.DataAccess.Impl.Services;
 using Handel.DataAccess.Impl.UserManagers;
 using Handel.DataAccess.Implementation;
@@ -74,17 +77,23 @@ namespace Handel.MVC
                 Component.For<IUserManager>().ImplementedBy<ApplicationUserManager>().LifestyleTransient());
             IoC.Container.Register(
                 Component.For<ISignInManager>().ImplementedBy<ApplicationSignInManager>().LifestyleTransient());
-
+            
             IoC.Container.Register(
                 Component.For<IAuthenticationManager>()
                     .UsingFactoryMethod(AuthenticationMangerFactory.CreateAuthManagerStatic).LifestylePerWebRequest());
 
             IoC.Container.Register(Component.For<IApplicationUser>().ImplementedBy<ApplicationUser>().LifestyleTransient());
             IoC.Container.Register(Component.For<IAccountService>().ImplementedBy<AccountService>().LifestyleTransient());
-
-
+            IoC.Container.Register(
+                Component.For<IFloatTestService>().ImplementedBy<FloatTestService>().LifestyleTransient());
+            IoC.Container.Register(
+                Component.For(typeof(IGenericRepository<,>))
+                    .ImplementedBy(typeof(GenericRepository<,>))
+                    .LifestyleTransient());
+           // IoC.Container.Register(
+             //   Component.For<IShopRepository>().ImplementedBy<ShopRepository>().ImplementedBy<ApplicationContext>().LifestyleTransient());
             IoC.Container.Kernel.Register(Component.For<IApplicationUserFactory>().AsFactory().LifestylePerWebRequest());
-
+            
         }
     }
 }
