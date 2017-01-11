@@ -9,7 +9,10 @@ namespace Handel.MVC.Controllers
 {
     public class BaseController : Controller
     {
-        public string CurrentUser => HttpContext.User.Identity.Name;
+        public string CurrentUser
+        {
+            get { return HttpContext.User.Identity.Name; }
+        }
 
         protected void AddErrors(IIdentityResult result)
         {

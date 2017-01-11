@@ -8,6 +8,9 @@ namespace Handel.MVC.Controllers
 {
     public abstract class BaseApiController : ApiController
     {
-        public string CurrentUser => HttpContext.Current.User.Identity.Name;
+        public string CurrentUser
+        {
+            get { return HttpContext.Current.User.Identity.Name; }
+        }
     }
 }
