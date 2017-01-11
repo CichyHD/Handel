@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Handel.Core.BusinessClasses;
 
 namespace Handel.DataAccess.Contract.IRepository
 {
-    public interface IShopRepository
+    public interface IShopRepository:IGenericRepository<Shop,Guid>
     {
         object someTestRepoFloatToService(string message);
     }

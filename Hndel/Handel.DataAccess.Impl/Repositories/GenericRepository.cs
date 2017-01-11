@@ -7,19 +7,21 @@ using System.Text;
 using System.Threading.Tasks;
 using Handel.Core.BusinessClasses;
 using Handel.DataAccess.Contract.IRepository;
+using Handel.DataAccess.Contract.Misc;
+using Handel.DataAccess.Implementation.Context;
 
 namespace Handel.DataAccess.Impl.Repositories
 {
     public abstract class GenericRepository<TEntity,TId>:IGenericRepository<TEntity,TId>
         where TEntity:BaseObject<TId>
     {
-        protected DbContext _context;
+        protected readonly ApplicationContext _context;
         protected readonly IDbSet<TEntity> _dbSet;
 
-        public GenericRepository(DbContext context)
+        public GenericRepository(ApplicationContext context)
         {
             _context = context;
-            _dbSet = context.Set<TEntity>();
+            _dbSet = _context.Set<TEntity>();
         }
         public virtual TEntity Add(TEntity entity)
         {

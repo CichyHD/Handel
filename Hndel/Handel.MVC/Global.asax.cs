@@ -15,6 +15,7 @@ using Handel.Core.Misc;
 using Handel.DataAccess.Contract;
 using Handel.DataAccess.Contract.AbstractFactories;
 using Handel.DataAccess.Contract.IRepository;
+using Handel.DataAccess.Contract.Misc;
 using Handel.DataAccess.Contract.Services;
 using Handel.DataAccess.Contract.UserManagers;
 using Handel.DataAccess.Impl.Repositories;
@@ -90,8 +91,8 @@ namespace Handel.MVC
                 Component.For(typeof(IGenericRepository<,>))
                     .ImplementedBy(typeof(GenericRepository<,>))
                     .LifestyleTransient());
-           // IoC.Container.Register(
-             //   Component.For<IShopRepository>().ImplementedBy<ShopRepository>().ImplementedBy<ApplicationContext>().LifestyleTransient());
+            IoC.Container.Register(
+                Component.For<IShopRepository>().ImplementedBy<ShopRepository>());
             IoC.Container.Kernel.Register(Component.For<IApplicationUserFactory>().AsFactory().LifestylePerWebRequest());
             
         }

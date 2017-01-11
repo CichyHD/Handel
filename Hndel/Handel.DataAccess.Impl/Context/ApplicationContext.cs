@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Handel.Core.BusinessClasses;
+using Handel.DataAccess.Contract.Misc;
 using Handel.DataAccess.Implementation;
 using Microsoft.AspNet.Identity.EntityFramework;
 
