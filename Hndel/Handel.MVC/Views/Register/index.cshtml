@@ -1,0 +1,73 @@
+﻿<div class="container">
+
+    <div class="row">
+        <div class="span12">
+            <ul class="breadcrumb">
+                <li>@Html.ActionLink("Strona główna", "Index", "Home") <span class="divider">/</span></li>
+                <li class="active">Rejestracja</li>
+            </ul>
+
+            <h3> Rejestracja</h3>
+
+            <div class="well">
+                <form class="form-horizontal">
+                    <h3>Uzupełnij swoje dane</h3>
+
+                    <div class="control-group">
+                        <label class="control-label">Tytuł <sup>*</sup></label>
+                        <div class="controls">
+                            <select class="span1" name="days">
+                                <option value="0">-</option>
+                                <option value="1">Pan</option>
+                                <option value="2">Pani</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="control-group">
+                        <label class="control-label" for="inputFname">Imię <sup>*</sup></label>
+                        <div class="controls">
+                            <input type="text" id="inputFname" placeholder="Imię">
+                        </div>
+                    </div>
+
+                    <div class="control-group">
+                        <label class="control-label" for="inputLname">Nazwisko <sup>*</sup></label>
+                        <div class="controls">
+                            <input type="text" id="inputLname" placeholder="Nazwisko">
+                        </div>
+                    </div>
+
+                    <div class="control-group">
+                        <label class="control-label" for="inputEmail">Email <sup>*</sup></label>
+                        <div class="controls">
+                            <input type="text" placeholder="Email">
+                        </div>
+                    </div>
+
+                    <div class="control-group">
+                        <label class="control-label">Hasło <sup>*</sup></label>
+                        <div class="controls">
+                            <input type="password" placeholder="Hasło">
+                        </div>
+                    </div>
+
+                    <div class="control-group">
+                        <label class="control-label">Data urodzenia <sup>*</sup></label>
+                        <div class="controls">
+                            <input type="text" name="day" placeholder="Dzień">
+                            <input type="text" name="month" placeholder="Miesiąc">
+                            <input type="text" name="year" placeholder="Rok">
+                        </div>
+                    </div>
+
+                    <div class="control-group">
+                        <div class="controls">
+                            <input type="submit" name="submitAccount" value="Zarejestruj" class="exclusive shopBtn">
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div><!-- /container -->

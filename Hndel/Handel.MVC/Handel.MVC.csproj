@@ -219,6 +219,12 @@
     <Compile Include="Controllers\BaseApiController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\ExampleApiController.cs" />
+    <Compile Include="Controllers\RegisterController.cs" />
+    <Compile Include="Controllers\CartController.cs" />
+    <Compile Include="Controllers\ProductDetailsController.cs" />
+    <Compile Include="Controllers\ContactController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\ProductsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -291,6 +297,12 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Products\Index.cshtml" />
+    <Content Include="Views\Cart\index.cshtml" />
+    <Content Include="Views\Contact\index.cshtml" />
+    <Content Include="Views\Login\index.cshtml" />
+    <Content Include="Views\ProductDetails\index.cshtml" />
+    <Content Include="Views\Register\index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Handel.Core\Handel.Core.csproj">

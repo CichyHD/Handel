@@ -1,0 +1,74 @@
+﻿<div class="container">
+    <div class="row">
+        <div class="span12">
+
+            <ul class="breadcrumb">
+                <li>@Html.ActionLink("Strona główna", "Index", "Home") <span class="divider">/</span></li>
+                <li>@Html.ActionLink("Produkty", "Index", "Products") <span class="divider">/</span></li>
+                <li class="active">Szczegóły produktu</li>
+            </ul>
+
+            <div class="well well-small">
+                <div class="row-fluid">
+                    <div class="span5">
+                        <div id="myCarousel" class="carousel slide cntr">
+                            <div class="carousel-inner">
+                                <div class="item active">
+                                    <a href="#">
+                                        <img src="../Content/img/a.jpg" alt="" style="width:100%">
+                                    </a>
+                                </div>
+                                <div class="item">
+                                    <a href="#">
+                                        <img src="../Content/img/b.jpg" alt="" style="width:100%">
+                                    </a>
+                                </div>
+                                <div class="item">
+                                    <a href="#">
+                                        <img src="../Content/img/e.jpg" alt="" style="width:100%">
+                                    </a>
+                                </div>
+                            </div>
+                            <a class="left carousel-control" href="#myCarousel" data-slide="prev">‹</a>
+                            <a class="right carousel-control" href="#myCarousel" data-slide="next">›</a>
+                        </div>
+                    </div>
+
+                    <div class="span7">
+                        <h3>Koszula Armaniego</h3>
+                        <hr class="soft" />
+
+                        <form class="form-horizontal">
+                            <div class="control-group">
+                                <label class="control-label"><span>140.00zł</span></label>
+                            </div>
+
+                            <div class="control-group">
+                                <label class="control-label"><span>Kolor</span></label>
+                                <div class="controls">
+                                    <select class="span11">
+                                        <option>Czerwony</option>
+                                        <option>Żółty</option>
+                                        <option>Niebieski</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <label class="control-label"><span>Materiał</span></label>
+                                <div class="controls">
+                                    <select class="span11">
+                                        <option>Bawełna</option>
+                                        <option>Gruz</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <button type="submit" class="shopBtn"><span class=" icon-shopping-cart"></span> Dodaj do koszyka</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div><!-- /container -->

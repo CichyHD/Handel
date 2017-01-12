@@ -1,0 +1,56 @@
+﻿<div class="container">
+    <div id="gototop"> </div>
+
+    <div class="row">
+        <div class="span12">
+            <ul class="breadcrumb">
+                <li><a>@Html.ActionLink("Strona główna", "Index", "Home")</a> <span class="divider">/</span></li>
+                <li class="active">Logowanie</li>
+            </ul>
+            <hr class="soft" />
+            <h3> Logowanie</h3>
+
+            <div class="well">
+
+                <div class="span1"></div>
+
+                <div class="span4">
+                    <h5>Stwórz nowe konto</h5><br />
+                    Przejdź do zakładki tworzenia nowego konta<br /><br /><br />
+
+                    <div class="btn btn-block">@Html.ActionLink("Utwórz nowe konto", "Index", "Register")</div>
+                </div>
+
+                <div class="span1"> &nbsp;</div>
+
+                <div class="span4">
+                    <h5>Posiadasz zarejestrowane konto?</h5>
+
+                    <form>
+                        <div class="control-group">
+                            <label class="control-label" for="inputEmail">Adres email</label>
+                            <div class="controls">
+                                <input class="span3" type="text" placeholder="Email">
+                            </div>
+                        </div>
+
+                        <div class="control-group">
+                            <label class="control-label" for="inputPassword">Hasło</label>
+                            <div class="controls">
+                                <input type="password" class="span3" placeholder="Password">
+                            </div>
+                        </div>
+
+                        <div class="control-group">
+                            <div class="controls">
+                                <button type="submit" class="btn btn-block">Zaloguj się</button>
+                                <a href="#" class="btn btn-block">Zapomniałem hasła</a>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div style="clear: both;"></div>
+            </div>
+        </div>
+    </div>
+</div>
