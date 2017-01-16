@@ -84,6 +84,54 @@ namespace Handel.Controllers
                 userPreferences.Waist + 2 >= x.Waist && userPreferences.Waist - 1 <= x.Waist
             ).ToList();
 
+            if (modeldb.Count < 5)
+            {
+                    modeldb = context.Shirt.Where(x =>
+                    userPreferences.Arms - 1 <= x.Arms && x.Arms <= userPreferences.Arms + 2
+                    &&
+                    userPreferences.Chest <= x.Chest && x.Chest <= userPreferences.Chest + 2
+                    &&
+                    userPreferences.Collar <= x.Collar && x.Collar <= userPreferences.Collar + 1
+                    &&
+                    userPreferences.Cuff <= x.Cuff && x.Cuff <= userPreferences.Cuff + 1
+                    &&
+                    userPreferences.Made.ToLower() == x.Made.ToLower()
+                    &&
+                    userPreferences.Price >= x.Price
+                    &&
+                    userPreferences.Sex.ToLower() == x.Sex.ToLower()
+                    &&
+                    userPreferences.ShirtLength + 3 >= x.ShirtLength && userPreferences.ShirtLength - 1 <= x.ShirtLength
+                    &&
+                    userPreferences.Sleeve + 2 >= x.Sleeve && userPreferences.Sleeve - 1 <= x.Sleeve
+                    &&
+                    userPreferences.Waist + 2 >= x.Waist && userPreferences.Waist - 1 <= x.Waist
+                ).ToList();
+            }
+
+            if (modeldb.Count < 5)
+            {
+                modeldb = context.Shirt.Where(x =>
+                userPreferences.Arms - 1 <= x.Arms && x.Arms <= userPreferences.Arms + 2
+                &&
+                userPreferences.Chest <= x.Chest && x.Chest <= userPreferences.Chest + 2
+                &&
+                userPreferences.Collar <= x.Collar && x.Collar <= userPreferences.Collar + 1
+                &&
+                userPreferences.Cuff <= x.Cuff && x.Cuff <= userPreferences.Cuff + 1
+                &&
+                userPreferences.Price >= x.Price
+                &&
+                userPreferences.Sex.ToLower() == x.Sex.ToLower()
+                &&
+                userPreferences.ShirtLength + 3 >= x.ShirtLength && userPreferences.ShirtLength - 1 <= x.ShirtLength
+                &&
+                userPreferences.Sleeve + 2 >= x.Sleeve && userPreferences.Sleeve - 1 <= x.Sleeve
+                &&
+                userPreferences.Waist + 2 >= x.Waist && userPreferences.Waist - 1 <= x.Waist
+                ).ToList();
+            }
+
             List<ShirtViewModel> model = new List<ShirtViewModel>();
 
             foreach (var item in modeldb)
