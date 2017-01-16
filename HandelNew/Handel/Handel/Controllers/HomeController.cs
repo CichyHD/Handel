@@ -18,6 +18,7 @@ using DB;
 
 namespace Handel.Controllers
 {
+    [Authorize]
     public class HomeController : Controller
     {
         public ActionResult Index()
