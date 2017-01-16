@@ -83,4 +83,53 @@ namespace Handel.Models
         public string SelectedProvider { get; set; }
         public ICollection<System.Web.Mvc.SelectListItem> Providers { get; set; }
     }
+
+    public class EditPreferencesViewModel
+    {
+
+
+        [Display(Name = "Color")]
+        public string Color { get; set; }
+
+        [Display(Name = "Color type")]
+        public string ColorType { get; set; }
+
+        [Required]
+        [Display(Name = "MaxPrice")]
+        public int Price { get; set; }
+
+        [Display(Name = "Made")]
+        public string Made { get; set; }
+
+        [Display(Name = "Sex")]
+        public string Sex { get; set; }
+
+        [Required]
+        [Display(Name = "Collar")]
+        public int Collar { get; set; }
+
+        [Required]
+        [Display(Name = "Arms")]
+        public int Arms { get; set; }
+
+        [Required]
+        [Display(Name = "Sleeve")]
+        public int Sleeve { get; set; }
+
+        [Required]
+        [Display(Name = "Shirt length")]
+        public int ShirtLength { get; set; }
+
+        [Required]
+        [Display(Name = "Waist")]
+        public int Waist { get; set; }
+
+        [Required]
+        [Display(Name = "Chest")]
+        public int Chest { get; set; }
+
+        [Required]
+        [Display(Name = "Cuff")]
+        public int Cuff { get; set; }
+    }
 }
