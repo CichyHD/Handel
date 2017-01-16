@@ -9,6 +9,19 @@
        new SelectListItem { Value = "szary", Text = "szary" },
        new SelectListItem { Value = "niebieski", Text = "niebieski" },
        new SelectListItem { Value = "jasny fiolet", Text = "jasny fiolet" },
+       new SelectListItem { Value = "bialy", Text = "bialy" },
+       new SelectListItem { Value = "granatowy", Text = "granatowy" },
+       new SelectListItem { Value = "zolty", Text = "zolty" },
+       new SelectListItem { Value = "czerwony", Text = "czerwony" },
+       new SelectListItem { Value = "bordowy", Text = "bordowy" },
+       new SelectListItem { Value = "bialo-niebieski", Text = "bialo-niebieski" },
+       new SelectListItem { Value = "bialo-rozowy", Text = "bialo-rozowy" },
+       new SelectListItem { Value = "czarny", Text = "czarny" },
+       new SelectListItem { Value = "zielony", Text = "zielony" },
+       new SelectListItem { Value = "bugundowy", Text = "bugundowy" },
+       new SelectListItem { Value = "czarno-bialy", Text = "czarno-bialy" },
+       new SelectListItem { Value = "ciemnozielony", Text = "ciemnozielony" },
+       new SelectListItem { Value = "zielono-niebieski", Text = "zielono-niebieski" },
     };
 
     var ColorTypeSelect = new List<System.Web.Mvc.SelectListItem>()
@@ -21,7 +34,26 @@
     {
        new SelectListItem { Value = "Lee", Text = "Lee" },
        new SelectListItem { Value = "Cropp", Text = "Cropp" },
-       new SelectListItem { Value = "ETERNA", Text = "ETERNA" }
+       new SelectListItem { Value = "ETERNA", Text = "ETERNA" },
+       new SelectListItem { Value = "TOM TAILOR DENIM", Text = "TOM TAILOR DENIM" },
+       new SelectListItem { Value = "REPLAY", Text = "REPLAY" },
+       new SelectListItem { Value = "PIER ONE", Text = "PIER ONE" },
+       new SelectListItem { Value = "ABERCROMBIE and FITCH", Text = "ABERCROMBIE and FITCH" },
+       new SelectListItem { Value = "JACK and JONES", Text = "JACK and JONES" },
+       new SelectListItem { Value = "BURTON MENSWEAR LONDON", Text = "BURTON MENSWEAR LONDON" },
+       new SelectListItem { Value = "SELECTED HOMME", Text = "SELECTED HOMME" },
+       new SelectListItem { Value = "ONLY and SONS", Text = "ONLY and SONS" },
+       new SelectListItem { Value = "HILFIGER DENIM", Text = "HILFIGER DENIM" },
+       new SelectListItem { Value = "VERO MODA", Text = "VERO MODA" },
+       new SelectListItem { Value = "HILFIGER DENIM", Text = "HILFIGER DENIM" },
+       new SelectListItem { Value = "HUGO", Text = "HUGO" },
+       new SelectListItem { Value = "MARC O`POLO", Text = "MARC O`POLO" },
+       new SelectListItem { Value = "ESPRIT", Text = "ESPRIT" },
+       new SelectListItem { Value = "KAFFE", Text = "KAFFE" },
+       new SelectListItem { Value = "FARAH", Text = "FARAH" },
+       new SelectListItem { Value = "ENETTON", Text = "ENETTON" },
+       new SelectListItem { Value = "POLO RALPH LAUREN", Text = "POLO RALPH LAUREN" },
+
     };
 
     var SexSelect = new List<System.Web.Mvc.SelectListItem>()
@@ -29,6 +61,7 @@
        new SelectListItem { Value = "M", Text = "Male" },
        new SelectListItem { Value = "K", Text = "Female" },
     };
+
 }
 
 <h2>@ViewBag.Title.</h2>
@@ -88,6 +121,7 @@
                 @Html.DropDownListFor(m => m.Sex, SexSelect, new { @class = "form-control" })
             </div>
         </div>
+
         <div class="form-group">
             <p>Select your size</p>
         </div>
