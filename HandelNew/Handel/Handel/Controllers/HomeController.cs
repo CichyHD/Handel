@@ -43,12 +43,14 @@ namespace Handel.Controllers
         public ActionResult UpdateDatabase()
         {
             var context = new Context();
-            context.Shirt.ToList().RemoveAll(x => 1 == 1);
+
+            context.Database.ExecuteSqlCommand("TRUNCATE TABLE [ShirtModels]");
+
             context.SaveChanges();
 
-            SaveXml("https://sklep-sggw-3.herokuapp.com/shared/db.xml");
-            SaveXml("https://sklep-sggw-2.herokuapp.com/shared/db.xml");
-            SaveXml("https://sklep-sggw.herokuapp.com/shared/db.xml");
+            SaveXml("https://sklep-sggw-3.herokuapp.com/shared/db.xml", "https://sklep-sggw-3.herokuapp.com/");
+            SaveXml("https://sklep-sggw-2.herokuapp.com/shared/db.xml", "https://sklep-sggw-2.herokuapp.com/");
+            SaveXml("https://sklep-sggw.herokuapp.com/shared/db.xml", "https://sklep-sggw.herokuapp.com/");
 
             return View();
         }
@@ -62,28 +64,28 @@ namespace Handel.Controllers
             UserPreferences userPreferences = context.UserPreferences.Where(x => x.UserId == currentUserName).FirstOrDefault();
 
             var modeldb = context.Shirt.Where(x =>
-                userPreferences.Arms - 1 <= x.Arms && x.Arms <= userPreferences.Arms + 2
-                &&
-                userPreferences.Chest <= x.Chest && x.Chest <= userPreferences.Chest + 2
-                &&
-                userPreferences.Collar <= x.Collar && x.Collar <= userPreferences.Collar + 1
-                &&
-                userPreferences.Color == x.Color
-                &&
-                userPreferences.Cuff <= x.Cuff && x.Cuff <= userPreferences.Cuff + 1
-                &&
-                userPreferences.Made.ToLower() == x.Made.ToLower()
-                &&
-                userPreferences.Price >= x.Price
-                &&
-                userPreferences.Sex.ToLower() == x.Sex.ToLower()
-                &&
-                userPreferences.ShirtLength + 3 >= x.ShirtLength && userPreferences.ShirtLength - 1 <= x.ShirtLength
-                &&
-                userPreferences.Sleeve + 2 >= x.Sleeve && userPreferences.Sleeve - 1 <= x.Sleeve
-                &&
-                userPreferences.Waist + 2 >= x.Waist && userPreferences.Waist - 1 <= x.Waist
-            ).ToList();
+                    userPreferences.Arms - 1 <= x.Arms && x.Arms <= userPreferences.Arms + 2
+                    &&
+                    userPreferences.Chest <= x.Chest && x.Chest <= userPreferences.Chest + 2
+                    &&
+                    userPreferences.Collar <= x.Collar && x.Collar <= userPreferences.Collar + 1
+                    &&
+                    userPreferences.Color == x.Color
+                    &&
+                    userPreferences.Cuff <= x.Cuff && x.Cuff <= userPreferences.Cuff + 1
+                    &&
+                    userPreferences.Made.ToLower() == x.Made.ToLower()
+                    &&
+                    userPreferences.Price >= x.Price
+                    &&
+                    userPreferences.Sex.ToLower() == x.Sex.ToLower()
+                    &&
+                    userPreferences.ShirtLength + 3 >= x.ShirtLength && userPreferences.ShirtLength - 1 <= x.ShirtLength
+                    &&
+                    userPreferences.Sleeve + 2 >= x.Sleeve && userPreferences.Sleeve - 1 <= x.Sleeve
+                    &&
+                    userPreferences.Waist + 2 >= x.Waist && userPreferences.Waist - 1 <= x.Waist
+                ).ToList();
 
             if (modeldb.Count < 5)
             {
@@ -112,24 +114,24 @@ namespace Handel.Controllers
 
             if (modeldb.Count < 5)
             {
-                modeldb = context.Shirt.Where(x =>
-                userPreferences.Arms - 1 <= x.Arms && x.Arms <= userPreferences.Arms + 2
-                &&
-                userPreferences.Chest <= x.Chest && x.Chest <= userPreferences.Chest + 2
-                &&
-                userPreferences.Collar <= x.Collar && x.Collar <= userPreferences.Collar + 1
-                &&
-                userPreferences.Cuff <= x.Cuff && x.Cuff <= userPreferences.Cuff + 1
-                &&
-                userPreferences.Price >= x.Price
-                &&
-                userPreferences.Sex.ToLower() == x.Sex.ToLower()
-                &&
-                userPreferences.ShirtLength + 3 >= x.ShirtLength && userPreferences.ShirtLength - 1 <= x.ShirtLength
-                &&
-                userPreferences.Sleeve + 2 >= x.Sleeve && userPreferences.Sleeve - 1 <= x.Sleeve
-                &&
-                userPreferences.Waist + 2 >= x.Waist && userPreferences.Waist - 1 <= x.Waist
+                    modeldb = context.Shirt.Where(x =>
+                    userPreferences.Arms - 1 <= x.Arms && x.Arms <= userPreferences.Arms + 2
+                    &&
+                    userPreferences.Chest <= x.Chest && x.Chest <= userPreferences.Chest + 2
+                    &&
+                    userPreferences.Collar <= x.Collar && x.Collar <= userPreferences.Collar + 1
+                    &&
+                    userPreferences.Cuff <= x.Cuff && x.Cuff <= userPreferences.Cuff + 1
+                    &&
+                    userPreferences.Price >= x.Price
+                    &&
+                    userPreferences.Sex.ToLower() == x.Sex.ToLower()
+                    &&
+                    userPreferences.ShirtLength + 3 >= x.ShirtLength && userPreferences.ShirtLength - 1 <= x.ShirtLength
+                    &&
+                    userPreferences.Sleeve + 2 >= x.Sleeve && userPreferences.Sleeve - 1 <= x.Sleeve
+                    &&
+                    userPreferences.Waist + 2 >= x.Waist && userPreferences.Waist - 1 <= x.Waist
                 ).ToList();
             }
 
@@ -163,7 +165,7 @@ namespace Handel.Controllers
             return View(model);
         }
 
-        public void SaveXml(string url)
+        public void SaveXml(string url, string server)
         {
             XmlDocument xmlDoc = new XmlDocument();
             xmlDoc.Load(url);
@@ -200,7 +202,7 @@ namespace Handel.Controllers
                         Waist = shirt.Talia,
                         Name = made.Nazwa,
                         Composition = made.Sklad,
-                        Photo = shirt.Zdjecie,
+                        Photo = server + shirt.Zdjecie.Replace("undefined/", ""),
                         Link = "sklep..."
                     });
                 }
