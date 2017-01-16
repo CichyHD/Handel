@@ -7,6 +7,7 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using Handel.Models;
+using DB;
 
 namespace Handel.Controllers
 {
@@ -25,7 +26,52 @@ namespace Handel.Controllers
             UserManager = userManager;
             SignInManager = signInManager;
         }
+        public ActionResult EditPreferences()
+        {
 
+            var context = new Context();
+            string userId = User.Identity.GetUserName();
+            UserPreferences preferences = context.UserPreferences.Where(x=>x.UserId == userId).FirstOrDefault();
+
+            EditPreferencesViewModel model = new EditPreferencesViewModel()
+            {
+                Color = preferences.Color,
+                ColorType = preferences.ColorType,
+                Price = preferences.Price,
+                Made = preferences.Made,
+                Sex = preferences.Sex,
+                Collar = preferences.Collar,
+                Arms = preferences.Arms,
+                Sleeve = preferences.Sleeve,
+                ShirtLength = preferences.ShirtLength,
+                Waist = preferences.Waist,
+                Chest = preferences.Chest,
+                Cuff = preferences.Cuff
+            };
+
+            return View(model);
+        }
+        public ActionResult SavePreferences(EditPreferencesViewModel model)
+        {
+            var context = new Context();
+            string userId = User.Identity.GetUserName();
+            UserPreferences preferences = context.UserPreferences.Where(x => x.UserId == userId).FirstOrDefault();
+            preferences.Arms = model.Arms;
+            preferences.Chest = model.Chest;
+            preferences.Collar = model.Collar;
+            preferences.Color = model.Color;
+            preferences.ColorType = model.ColorType;
+            preferences.Cuff = model.Cuff;
+            preferences.Made = model.Made;
+            preferences.Price = model.Price;
+            preferences.Sex = model.Sex;
+            preferences.ShirtLength = model.ShirtLength;
+            preferences.Sleeve = model.Sleeve;
+            preferences.Waist = model.Waist;
+            context.SaveChanges();
+
+            return RedirectToAction("EditPreferences", "Manage");
+        }
         public ApplicationSignInManager SignInManager
         {
             get

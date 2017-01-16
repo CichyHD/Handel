@@ -282,6 +282,7 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Home\ShowShirtsForMe.cshtml" />
     <Content Include="Views\Home\UpdateDatabase.cshtml" />
+    <Content Include="Views\Manage\EditPreferences.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
