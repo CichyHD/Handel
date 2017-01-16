@@ -27,7 +27,7 @@ namespace Handel.Controllers
 
         public ActionResult About()
         {
-            ViewBag.Message = "Your application description page.";
+            ViewBag.Message = "Our service allows you to find shirts which fits you in the best way according to your personal preferences such as sex, body dimensions, color, composition and much more... ";
 
             return View();
         }
