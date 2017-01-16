@@ -6,26 +6,131 @@
 }
 
 <div class="container">
-    @foreach (var item in Model)
-    {
-        <div class="item">
-            @item.Arms <br />
-            @item.Chest <br />
-            @item.Collar <br />
-            @item.Color <br />
-            @item.ColorType <br />
-            @item.Composition <br />
-            @item.Cuff <br />
-            @item.Link <br />
-            @item.Made <br />
-            @item.Name <br />
-            @item.Photo <br />
-            @item.Price <br />
-            @item.Sex <br />
-            @item.ShirtLength <br />
-            @item.Sleeve <br />
-            @item.Waist <br />
-        </div>
-    }
+    <div class="flex">
+        @foreach (var item in Model)
+        {
+            <div class="item">
+                <h1>@item.Name</h1>
+                <div class="img-container">
+                    <img src="@item.Photo" />
+                </div>
+                <div class="description-container">
+                    <div class="dismensions">
+                        <h3>Dismensions</h3>
+                        <p>
+                            <span class="bold">
+                                Arms:
+                            </span>
+                            <span>
+                                @item.Arms
+                            </span>
+                        </p>
+                        <p>
+                            <span class="bold">
+                                Chest:
+                            </span>
+                            <span>
+                                @item.Chest
+                            </span>
+                        </p>
+                        <p>
+                            <span class="bold">
+                                Collar:
+                            </span>
+                            <span>
+                                @item.Collar
+                            </span>
+                        </p>
+                        <p>
+                            <span class="bold">
+                                ShirtLength:
+                            </span>
+                            <span>
+                                @item.ShirtLength
+                            </span>
+                        </p>
+                        <p>
+                            <span class="bold">
+                                Sleeve:
+                            </span>
+                            <span>
+                                @item.Sleeve
+                            </span>
+                        </p>
+                        <p>
+                            <span class="bold">
+                                Waist:
+                            </span>
+                            <span>
+                                @item.Waist
+                            </span>
+                        </p>
+                    </div>
+                    <hr />
+                    <div class="other-info">
+                        <h3>Other info</h3>
+                        <p>
+                            <span class="bold">
+                                Color:
+                            </span>
+                            <span>
+                                @item.Color
+                            </span>
+                        </p>
+                        <p>
+                            <span class="bold">
+                                ColorType:
+                            </span>
+                            <span>
+                                @item.ColorType
+                            </span>
+                        </p>
+                        <p>
+                            <span class="bold">
+                                Cuff:
+                            </span>
+                            <span>
+                                @item.Cuff
+                            </span>
+                        </p>
+                        <p>
+                            <span class="bold">
+                                Color:
+                            </span>
+                            <span>
+                                @item.Color
+                            </span>
+                        </p>
+                        <p>
+                            <span class="bold">
+                                Made:
+                            </span>
+                            <span>
+                               @item.Made
+                            </span>
+                        </p>
+                        <p>
+                            <span class="bold">
+                                Sex:
+                            </span>
+                            <span>
+                                @item.Sex
+                            </span>
+                        </p>
+                        <p>
+                            <span class="bold">
+                                Composition:
+                            </span>
+                            <span>
+                                @item.Composition
+                            </span>
+                        </p>
+                    </div>
+                </div>
+                <hr />
+                <h4 class="price">Cena: @item.Price $</h4>
+            </div>
+        }
+    </div>
 </div>
 
