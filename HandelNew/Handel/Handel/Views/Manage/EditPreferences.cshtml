@@ -1,0 +1,157 @@
+﻿@model Handel.Models.EditPreferencesViewModel
+@{
+    ViewBag.Title = "Edit Preferences";
+}
+
+@{
+    var ColorSelect = new List<System.Web.Mvc.SelectListItem>()
+    {
+       new SelectListItem { Value = "szary", Text = "szary" },
+       new SelectListItem { Value = "niebieski", Text = "niebieski" },
+       new SelectListItem { Value = "jasny fiolet", Text = "jasny fiolet" },
+       new SelectListItem { Value = "bialy", Text = "bialy" },
+       new SelectListItem { Value = "granatowy", Text = "granatowy" },
+       new SelectListItem { Value = "zolty", Text = "zolty" },
+       new SelectListItem { Value = "czerwony", Text = "czerwony" },
+       new SelectListItem { Value = "bordowy", Text = "bordowy" },
+       new SelectListItem { Value = "bialo-niebieski", Text = "bialo-niebieski" },
+       new SelectListItem { Value = "bialo-rozowy", Text = "bialo-rozowy" },
+       new SelectListItem { Value = "czarny", Text = "czarny" },
+       new SelectListItem { Value = "zielony", Text = "zielony" },
+       new SelectListItem { Value = "bugundowy", Text = "bugundowy" },
+       new SelectListItem { Value = "czarno-bialy", Text = "czarno-bialy" },
+       new SelectListItem { Value = "ciemnozielony", Text = "ciemnozielony" },
+       new SelectListItem { Value = "zielono-niebieski", Text = "zielono-niebieski" },
+    };
+
+    var ColorTypeSelect = new List<System.Web.Mvc.SelectListItem>()
+    {
+       new SelectListItem { Value = "jednolite", Text = "jednolity" },
+       new SelectListItem { Value = "wielokolorowe", Text = "wielokolorowe" },
+    };
+
+    var MadeSelect = new List<System.Web.Mvc.SelectListItem>()
+    {
+       new SelectListItem { Value = "Lee", Text = "Lee" },
+       new SelectListItem { Value = "Cropp", Text = "Cropp" },
+       new SelectListItem { Value = "ETERNA", Text = "ETERNA" },
+       new SelectListItem { Value = "TOM TAILOR DENIM", Text = "TOM TAILOR DENIM" },
+       new SelectListItem { Value = "REPLAY", Text = "REPLAY" },
+       new SelectListItem { Value = "PIER ONE", Text = "PIER ONE" },
+       new SelectListItem { Value = "ABERCROMBIE and FITCH", Text = "ABERCROMBIE and FITCH" },
+       new SelectListItem { Value = "JACK and JONES", Text = "JACK and JONES" },
+       new SelectListItem { Value = "BURTON MENSWEAR LONDON", Text = "BURTON MENSWEAR LONDON" },
+       new SelectListItem { Value = "SELECTED HOMME", Text = "SELECTED HOMME" },
+       new SelectListItem { Value = "ONLY and SONS", Text = "ONLY and SONS" },
+       new SelectListItem { Value = "HILFIGER DENIM", Text = "HILFIGER DENIM" },
+       new SelectListItem { Value = "VERO MODA", Text = "VERO MODA" },
+       new SelectListItem { Value = "HILFIGER DENIM", Text = "HILFIGER DENIM" },
+       new SelectListItem { Value = "HUGO", Text = "HUGO" },
+       new SelectListItem { Value = "MARC O`POLO", Text = "MARC O`POLO" },
+       new SelectListItem { Value = "ESPRIT", Text = "ESPRIT" },
+       new SelectListItem { Value = "KAFFE", Text = "KAFFE" },
+       new SelectListItem { Value = "FARAH", Text = "FARAH" },
+       new SelectListItem { Value = "ENETTON", Text = "ENETTON" },
+       new SelectListItem { Value = "POLO RALPH LAUREN", Text = "POLO RALPH LAUREN" },
+
+    };
+
+    var SexSelect = new List<System.Web.Mvc.SelectListItem>()
+    {
+       new SelectListItem { Value = "M", Text = "Male" },
+       new SelectListItem { Value = "K", Text = "Female" },
+    };
+
+}
+<h2>@ViewBag.Title</h2>
+@using (Html.BeginForm("SavePreferences", "Manage", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+{
+
+    <div class="jumbotron">
+        <h4>Change your preferences</h4>
+        <div class="form-group">
+            @Html.LabelFor(m => m.Color, new { @class = "col-md-2 control-label" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(m => m.Color, ColorSelect, new { @class = "form-control" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.ColorType, new { @class = "col-md-2 control-label" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(m => m.ColorType, ColorTypeSelect, new { @class = "form-control" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.Price, new { @class = "col-md-2 control-label" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(m => m.Price, new { @class = "form-control" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.Made, new { @class = "col-md-2 control-label" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(m => m.Made, MadeSelect, new { @class = "form-control" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.Sex, new { @class = "col-md-2 control-label" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(m => m.Sex, SexSelect, new { @class = "form-control" })
+            </div>
+        </div>
+        <div class="form-group">
+            <p>Change your size</p>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.Collar, new { @class = "col-md-2 control-label" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(m => m.Collar, new { @class = "form-control" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.Arms, new { @class = "col-md-2 control-label" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(m => m.Arms, new { @class = "form-control" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.Sleeve, new { @class = "col-md-2 control-label" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(m => m.Sleeve, new { @class = "form-control" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.ShirtLength, new { @class = "col-md-2 control-label" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(m => m.ShirtLength, new { @class = "form-control" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.Waist, new { @class = "col-md-2 control-label" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(m => m.Waist, new { @class = "form-control" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.Chest, new { @class = "col-md-2 control-label" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(m => m.Chest, new { @class = "form-control" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.Cuff, new { @class = "col-md-2 control-label" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(m => m.Cuff, new { @class = "form-control" })
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.ValidationSummary("", new { @class = "text-danger" })
+        <div class="col-md-10">
+            <input type="submit" class="btn btn-default" value="Save" />
+        </div>
+    </div>
+}
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
