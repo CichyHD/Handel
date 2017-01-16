@@ -178,6 +178,22 @@ namespace Handel.Models
         [Required]
         [Display(Name = "Cuff")]
         public int Cuff { get; set; }
+
+        [Required]
+        [Display(Name = "Name")]
+        public string Name { get; set; }
+
+        [Required]
+        [Display(Name = "Composition")]
+        public string Composition { get; set; }
+
+        [Required]
+        [Display(Name = "Photo")]
+        public string Photo { get; set; }
+
+        [Required]
+        [Display(Name = "Link")]
+        public string Link { get; set; }
     }
 
     public class ResetPasswordViewModel

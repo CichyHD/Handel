@@ -1,0 +1,31 @@
+﻿@model List<Handel.Models.ShirtViewModel>
+
+@{
+    ViewBag.Title = "ShowShirtsForMe";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    @foreach (var item in Model)
+    {
+        <div class="item">
+            @item.Arms <br />
+            @item.Chest <br />
+            @item.Collar <br />
+            @item.Color <br />
+            @item.ColorType <br />
+            @item.Composition <br />
+            @item.Cuff <br />
+            @item.Link <br />
+            @item.Made <br />
+            @item.Name <br />
+            @item.Photo <br />
+            @item.Price <br />
+            @item.Sex <br />
+            @item.ShirtLength <br />
+            @item.Sleeve <br />
+            @item.Waist <br />
+        </div>
+    }
+</div>
+

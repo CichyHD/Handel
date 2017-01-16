@@ -9,6 +9,7 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Handel.Models;
 using Microsoft.Owin.Security;
+using DB;
 
 namespace Handel.Controllers
 {
@@ -155,13 +156,33 @@ namespace Handel.Controllers
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
-                    await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);
-                    
-                    // For more information on how to enable account confirmation and password reset please visit http://go.microsoft.com/fwlink/?LinkID=320771
-                    // Send an email with this link
-                    // string code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
-                    // var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
-                    // await UserManager.SendEmailAsync(user.Id, "Confirm your account", "Please confirm your account by clicking <a href=\"" + callbackUrl + "\">here</a>");
+                    SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);
+
+                    string currentUserId = model.Email;
+
+                    var context = new Context();
+
+                    context.UserPreferences.Add(
+                        new UserPreferences()
+                        {
+                            Arms = model.Arms,
+                            Chest = model.Chest,
+                            Collar = model.Collar,
+                            Color = model.Color,
+                            ColorType = model.ColorType,
+                            Composition = "test",
+                            Cuff = model.Cuff,
+                            Made = model.Made,
+                            Price = model.Price,
+                            Sex = model.Sex,
+                            ShirtLength = model.ShirtLength,
+                            Sleeve = model.Sleeve,
+                            UserId = currentUserId,
+                            Waist = model.Waist
+                        }
+                    );
+
+                    context.SaveChanges();
 
                     return RedirectToAction("Index", "Home");
                 }

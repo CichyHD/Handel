@@ -63,6 +63,20 @@ namespace Handel
             //    ClientId = "",
             //    ClientSecret = ""
             //});
+
+            /*Use Hangfire*/
+
+            //var program = container.Resolve<InstagramHelper>();
+
+            //JobStorage.Current = new SqlServerStorage("Traficar_ConnectionString");
+
+            //GlobalConfiguration.Configuration.UseActivator(new ContainerJobActivator(container));
+            //app.UseHangfireDashboard();
+            //app.UseHangfireServer();
+
+            //RecurringJob.AddOrUpdate(() => program.GetInstagramRegistrations(), Cron.Minutely);
+
+            /*Use Hangfire*/
         }
     }
 }

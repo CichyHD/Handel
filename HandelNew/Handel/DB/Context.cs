@@ -28,9 +28,9 @@ namespace DB
         }
 
         public DbSet<ShirtModel> Shirt { get; set; }
+        public DbSet<UserPreferences> UserPreferences { get; set; }
 
         public DbSet<ApplicationUser> ApplicationUser { get; set; }
-
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
