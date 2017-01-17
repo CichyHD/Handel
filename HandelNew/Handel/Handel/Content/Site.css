@@ -189,3 +189,41 @@ hr.soften {margin: 8px 0;background: #DDD;}
 .gotop:hover {color: #fff;text-decoration: none;-moz-border-radius: 10px;-webkit-border-radius: 10px;border-radius: 10px;}
 #gototop{margin-top:1px;}
 #footerMenu a{ font-size:12px; text-transform:lowercase}
+
+.flex-pref {
+    display: flex;
+    justify-content: space-around;
+}
+.preferences-col {
+    flex-basis: 48%;
+}
+
+.preferences-col hr{
+    color: #fff;
+    border-top: 1px solid #fff;
+}
+
+.save-btn input {
+  width: 100%;
+  max-width: none;
+  background-color: rgb(255,140,0);
+  color: #fff;
+  font-size: 1.5em;
+}
+.form-horizontal .form-group {
+    margin-left: auto;
+    margin-right: auto;
+}
+.form-horizontal .control-label {
+    padding-top: 0;
+    line-height: 34px;
+}
+.container .jumbotron {
+    margin-bottom: 15px;
+    margin-top: 15px;
+}
+
+.form-group p {
+    font-weight: 600;
+    font-size: 1.4em
+}
